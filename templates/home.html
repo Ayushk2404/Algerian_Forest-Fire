@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home_styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">FWI Prediction</h1>
+        <form action="{{ url_for('predict_datapoint')}}" method="post" class="form">
+            <div class="input-group">
+                <input type="text" name="Temperature" placeholder="Temperature" required="required" class="input-field">
+            </div>
+            <div class="input-group">
+                <input type="text" name="RH" placeholder="RH" required="required" class="input-field">
+            </div>
+            <div class="input-group">
+                <input type="text" name="Ws" placeholder="Ws" required="required" class="input-field">
+            </div>
+            <div class="input-group">
+                <input type="text" name="Rain" placeholder="Rain" required="required" class="input-field">
+            </div>
+            <div class="input-group">
+                <input type="text" name="FFMC" placeholder="FFMC" required="required" class="input-field">
+            </div>
+            <div class="input-group">
+                <input type="text" name="DMC" placeholder="DMC" required="required" class="input-field">
+            </div>
+            <div class="input-group">
+                <input type="text" name="ISI" placeholder="ISI" required="required" class="input-field">
+            </div>
+            <div class="input-group">
+                <input type="text" name="Classes" placeholder="Classes" required="required" class="input-field">
+            </div>
+            <div class="input-group">
+                <input type="text" name="Region" placeholder="Region" required="required" class="input-field">
+            </div>
+            <button type="submit" class="btn">Predict</button>
+        </form>
+        <h2 class="result">
+            THE FWI prediction is {{result}}
+        </h2>
+    </div>
+</body>
+</html>
